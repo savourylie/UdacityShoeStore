@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">ShoeStore</string>
+
+    <!--    Login Screen-->
+    <string name="title">The Shoe Store</string>
+    <string name="login_button">LOGIN</string>
+    <string name="logo_description">A shoe.</string>
+
+    <!--    Welcome Screen-->
+    <string name="title_welcome">Welcome to The Shoe Store!</string>
+    <string name="some_bullshit_welcome">We have all the shoes you’ll ever need at your fingertips.
+\n\nPress NEXT to see how to get your mom, your dad, or yourself a shiny new pair of shoes!</string>
+    <string name="button_welcome">NEXT</string>
+
+    <!--    Instruction Screen-->
+    <string name="title_instruction">Here\'s what you can do with The Shoe Store</string>
+    <string name="some_bullshit_instruction">With The Shoe Store app, you can browse through our inventory and check out the latest, hotest, the most brilliant shoes by selecting the shoes and clicking on the floating button.</string>
+    <string name="button_instruction">LET\'S GET STARTED!</string>
+
+
+
+
+</resources>
