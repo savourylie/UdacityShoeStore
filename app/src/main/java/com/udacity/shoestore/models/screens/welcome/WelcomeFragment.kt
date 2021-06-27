@@ -1,7 +1,6 @@
-package com.udacity.shoestore.models.screens.login
+package com.udacity.shoestore.models.screens.welcome
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,35 +8,34 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.udacity.shoestore.databinding.LoginFragmentBinding
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.WelcomeFragmentBinding
+import com.udacity.shoestore.models.screens.welcome.WelcomeFragmentDirections
 import timber.log.Timber
 
-class LoginFragment: Fragment() {
-
-    private lateinit var viewModel: LoginViewModel
-    private lateinit var binding: LoginFragmentBinding
+class WelcomeFragment : Fragment() {
+    private lateinit var viewModel: WelcomeViewModel
+    private lateinit var binding: WelcomeFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
-        Log.i("LoginView", "onCreateView called!")
+        // Inflate the layout for this fragment
 
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.login_fragment,
+            R.layout.welcome_fragment,
             container,
             false
         )
 
         Timber.i("Called ViewModelProvider")
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
 
-        binding.loginViewModel = viewModel
+        binding.welcomeViewModel = viewModel
         binding.setLifecycleOwner(this)
 
-        binding.loginButton.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+        binding.buttonWelcome.setOnClickListener {
+            findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment())
         }
 
         return binding.root

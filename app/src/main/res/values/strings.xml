@@ -6,7 +6,6 @@
     <!--    Login Screen-->
     <string name="title">The Shoe Store</string>
     <string name="login_button">LOGIN</string>
-    <string name="logo_description">A shoe.</string>
 
     <!--    Welcome Screen-->
     <string name="title_welcome">Welcome to The Shoe Store!</string>
@@ -19,7 +18,7 @@
     <string name="some_bullshit_instruction">With The Shoe Store app, you can browse through our inventory and check out the latest, hotest, the most brilliant shoes by selecting the shoes and clicking on the floating button.</string>
     <string name="button_instruction">LET\'S GET STARTED!</string>
 
-
-
+    <!--    Shoe Detail Screen-->
+    <string name="add_shoe_button">Yes, add it!</string>
 
 </resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="shoeListViewModel"
+            type="com.udacity.shoestore.models.screens.shoelist.ShoeListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+        <EditText
+            android:id="@+id/edit_text_email_login"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="172dp"
+            android:background="@color/colorPrimary"
+            android:ems="10"
+            android:fontFamily="@font/raleway_semibold"
+            android:hint="Email"
+            android:inputType="textCapWords"
+            android:paddingStart="12dp"
+            android:paddingLeft="12dp"
+            android:textSize="16sp"
+            android:text="@{shoeListViewModel.currentShoe}"
+            app:layout_constraintBottom_toTopOf="@+id/add_shoe_button"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/add_shoe_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="72dp"
+            android:text="@string/add_shoe_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

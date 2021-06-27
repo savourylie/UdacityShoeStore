@@ -3,12 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--    <data>-->
-    <!--        <variable-->
-    <!--            name="LoginViewModel"-->
-    <!--            type="com.example.android.guesstheword.screens.game.GameViewModel" />-->
-    <!--    </data>-->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/instruction_layout"
         android:layout_width="match_parent"
@@ -18,9 +12,11 @@
 
         <TextView
             android:id="@+id/title_instruction"
-            android:layout_width="231dp"
-            android:layout_height="152dp"
-            android:layout_marginTop="112dp"
+            android:layout_width="234dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="53dp"
             android:fontFamily="@font/kirang_haerang_regular"
             android:text="@string/title_instruction"
             android:textAlignment="textStart"
@@ -28,16 +24,17 @@
             android:textSize="36sp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.121"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
             android:id="@+id/some_bullshit_instruction"
-            android:layout_width="277dp"
-            android:layout_height="274dp"
-            android:layout_marginTop="52dp"
+            android:layout_width="268dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="53dp"
             android:fontFamily="@font/kirang_haerang_regular"
             android:text="@string/some_bullshit_instruction"
             android:textAlignment="textStart"
@@ -45,58 +42,47 @@
             android:textSize="24sp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_instruction" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/button_instruction"
-            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="267dp"
             android:layout_height="45dp"
+            android:layout_marginBottom="53dp"
             android:background="#F2C94C"
             android:fontFamily="@font/questrial_regular"
             android:text="@string/button_instruction"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="16sp"
-            app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:strokeColor="@color/colorPrimary" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="53dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="120dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintGuide_begin="604dp" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="232dp"
+            android:layout_marginEnd="6dp"
+            android:rotation="20"
             android:src="@drawable/ic_hand_drawn_arrow"
-            tools:layout_editor_absoluteX="196dp"
-            tools:layout_editor_absoluteY="510dp" />
+            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintHorizontal_bias="0.953"
+            app:layout_constraintStart_toEndOf="@+id/some_bullshit_instruction"
+            app:layout_constraintTop_toBottomOf="@+id/title_instruction" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="54dp"
             android:layout_height="54dp"
+            android:layout_marginTop="296dp"
+            android:layout_marginEnd="52dp"
             android:src="@drawable/ic_fab_button"
-            tools:layout_editor_absoluteX="330dp"
-            tools:layout_editor_absoluteY="536dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_instruction" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
