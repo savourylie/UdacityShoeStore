@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeItemBinding
@@ -47,6 +49,14 @@ class ShoeListFragment: Fragment() {
 
         showShoes(inflater, container)
 
+        shoeListViewModel.logoutFlag.observe(viewLifecycleOwner, Observer { isFinished ->
+            if (isFinished) {
+                val action = ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment()
+                NavHostFragment.findNavController(this).navigate(action)
+                shoeListViewModel.onLogoutComplete()
+            }
+        })
+
         return binding.root
     }
 
@@ -70,4 +80,6 @@ class ShoeListFragment: Fragment() {
 //
         }
     }
+
+
 }

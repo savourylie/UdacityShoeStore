@@ -12,6 +12,15 @@ class ShoeListViewModel: ViewModel() {
 
     var currentShoe = MutableLiveData<String>()
     var shoeList = mutableListOf<String>()
+    var logoutFlag = MutableLiveData<Boolean>()
+
+    fun logout() {
+        logoutFlag.value = true
+    }
+
+    fun onLogoutComplete() {
+        logoutFlag.value = false
+    }
 
     override fun onCleared() {
         super.onCleared()
