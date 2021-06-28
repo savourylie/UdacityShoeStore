@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
@@ -18,7 +19,7 @@ import timber.log.Timber
 
 class ShoeListFragment: Fragment() {
 
-    private lateinit var shoeListViewModel: ShoeListViewModel
+    private val shoeListViewModel: ShoeListViewModel by activityViewModels()
     private lateinit var binding: ShoeListFragmentBinding
     private lateinit var shoeItemBinding: ShoeItemBinding
 
@@ -35,7 +36,7 @@ class ShoeListFragment: Fragment() {
         )
 
         Timber.i("Called ViewModelProvider")
-        shoeListViewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
+//        shoeListViewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
 
         binding.shoeListViewModel = shoeListViewModel
         binding.setLifecycleOwner(this)
@@ -54,19 +55,19 @@ class ShoeListFragment: Fragment() {
 
         shoeListViewModel.shoeList.forEach { Log.i("ShoeListView", it) }
 
-//        for (shoe_detail in viewModel.shoeList) {
-//            Log.i("ShoeListView", "In for loop: ${shoe_detail}")
+        for (shoe_detail in shoeListViewModel.shoeList) {
+            Log.i("ShoeListView", "In for loop: ${shoe_detail}")
+
+            shoeItemBinding = DataBindingUtil.inflate(
+                inflater,
+                R.layout.shoe_item,
+                container,
+                false
+            )
+
+            shoeItemBinding.root.shoe_list_item.text = shoe_detail
+            binding.shoeScrollLinearLayout.addView(shoeItemBinding.root)
 //
-//            shoeItemBinding = DataBindingUtil.inflate(
-//                inflater,
-//                R.layout.shoe_item,
-//                container,
-//                false
-//            )
-//
-//            shoeItemBinding.root.shoe_list_item.text = shoe_detail
-//            binding.shoeScrollLinearLayout.addView(shoeItemBinding.root)
-//
-//        }
+        }
     }
 }

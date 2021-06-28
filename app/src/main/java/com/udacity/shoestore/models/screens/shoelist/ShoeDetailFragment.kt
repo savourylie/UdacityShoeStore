@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeDetailFragmentBinding
@@ -15,7 +16,7 @@ import com.udacity.shoestore.databinding.ShoeDetailFragmentBinding
 import timber.log.Timber
 
 class ShoeDetailFragment: Fragment() {
-    private lateinit var shoeListViewModel: ShoeListViewModel
+    private val shoeListViewModel: ShoeListViewModel by activityViewModels()
     private lateinit var binding: ShoeDetailFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +29,7 @@ class ShoeDetailFragment: Fragment() {
         )
 
         Timber.i("Called ViewModelProvider")
-        shoeListViewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
+//        shoeListViewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
 
         binding.shoeListViewModel = shoeListViewModel
         binding.setLifecycleOwner(this)
@@ -40,7 +41,7 @@ class ShoeDetailFragment: Fragment() {
             shoeListViewModel.shoeList.add(currentShoe)
             shoeListViewModel.shoeList.forEach { Log.i("ShoeDetailView", it) }
 //
-            Toast.makeText(getActivity(), "We have added the shoes to your list!" , Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "We have added the shoes to your list!" , Toast.LENGTH_SHORT).show();
             shoeListViewModel.currentShoe.value = ""
         }
 
