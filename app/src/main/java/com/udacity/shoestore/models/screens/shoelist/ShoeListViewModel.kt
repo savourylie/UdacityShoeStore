@@ -11,13 +11,10 @@ class ShoeListViewModel: ViewModel() {
     }
 
     var currentShoe = MutableLiveData<String>()
-    var storedShoe = ""
     var shoeList = mutableListOf<String>()
 
     override fun onCleared() {
         super.onCleared()
         Timber.i("ShoeListViewModel destroyed!")
     }
-
-
 }

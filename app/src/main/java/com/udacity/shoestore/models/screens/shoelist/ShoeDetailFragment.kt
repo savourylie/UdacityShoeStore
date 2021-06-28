@@ -34,14 +34,12 @@ class ShoeDetailFragment: Fragment() {
         binding.setLifecycleOwner(this)
 
         binding.addShoeButton.setOnClickListener {
-            shoeListViewModel.storedShoe = shoeListViewModel.currentShoe.value ?: "abc"
+            var currentShoe: String = binding.editTextEmailLogin.text.toString()
+            Log.i("ShoeDetailView", "Currenst shoes detail: ${currentShoe}")
 
-            Log.i("ShoeDetailView", "Currenst shoes detail: ${shoeListViewModel.storedShoe }")
-
-            shoeListViewModel.shoeList.add(shoeListViewModel.storedShoe)
-
+            shoeListViewModel.shoeList.add(currentShoe)
             shoeListViewModel.shoeList.forEach { Log.i("ShoeDetailView", it) }
-
+//
             Toast.makeText(getActivity(), "We have added the shoes to your list!" , Toast.LENGTH_LONG).show();
             shoeListViewModel.currentShoe.value = ""
         }

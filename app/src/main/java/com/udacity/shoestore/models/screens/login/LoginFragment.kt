@@ -37,6 +37,9 @@ class LoginFragment: Fragment() {
         binding.setLifecycleOwner(this)
 
         binding.loginButton.setOnClickListener {
+            Log.i("LoginView", "Email: " + binding.editTextEmailLogin.text.toString())
+            Log.i("LoginView", "Password: " + binding.editTextPasswordLogin.text.toString())
+
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         }
 
