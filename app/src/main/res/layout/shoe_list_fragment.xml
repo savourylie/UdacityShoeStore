@@ -19,10 +19,11 @@
 
         <ScrollView
             android:id="@+id/scrollView2"
-            android:layout_width="match_parent"
-            android:layout_height="537dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp">
+            android:layout_width="411dp"
+            android:layout_height="303dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
 
             <LinearLayout
                 android:id="@+id/shoe_scroll_linear_layout"
@@ -37,36 +38,18 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="142dp"
             android:layout_marginBottom="16dp"
-            android:src="@drawable/ic_brown_shoe_logo"
             android:rotation="-22.5"
+            android:src="@drawable/ic_brown_shoe_logo"
+            app:backgroundTint="@color/colorAccent"
+            app:elevation="6dp"
+            app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.952"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.922"
-            app:fabSize="normal"
-            app:elevation="6dp"
-            app:backgroundTint="@color/colorAccent"/>
-
-        <TextView
-            android:id="@+id/logout_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/raleway_semibold"
-            android:text="LOGOUT"
-            android:textColor="#866596"
-            android:textColorLink="#866596"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-            app:layout_constraintVertical_bias="0.908"
-            android:onClick="@{() -> shoeListViewModel.logout()}"
-            android:clickable="true"
-            android:focusable="true" />
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
