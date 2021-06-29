@@ -19,11 +19,13 @@
 
         <ScrollView
             android:id="@+id/scrollView2"
-            android:layout_width="411dp"
-            android:layout_height="303dp"
+            android:layout_width="fill_parent"
+            android:layout_height="517dp"
+            android:layout_marginTop="?attr/actionBarSize"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="0dp">
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="2dp">
 
             <LinearLayout
                 android:id="@+id/shoe_scroll_linear_layout"
