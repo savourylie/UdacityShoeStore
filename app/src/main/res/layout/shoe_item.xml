@@ -7,6 +7,8 @@
             name="shoeListViewModel"
             type="com.udacity.shoestore.models.screens.shoelist.ShoeListViewModel" />
     </data>
+
+    <!--    LinearLayout is preferred as the layout of a row element doesn't require the extra complexity -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

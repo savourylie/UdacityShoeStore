@@ -9,6 +9,7 @@
             type="com.udacity.shoestore.models.screens.login.LoginViewModel" />
     </data>
 
+    <!--        ConstraintLayout is used to set the relative position for each element -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/login_layout"
         android:layout_width="match_parent"

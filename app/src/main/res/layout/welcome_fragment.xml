@@ -9,6 +9,7 @@
                 type="com.udacity.shoestore.models.screens.welcome.WelcomeViewModel" />
         </data>
 
+    <!--    ConstraintLayout is preferred for more accruate positioning for different models of devices-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcome_layout"
         android:layout_width="match_parent"

@@ -8,6 +8,7 @@
             type="com.udacity.shoestore.models.screens.shoelist.ShoeListViewModel" />
     </data>
 
+    <!--    ConstraintLayout is preferred for more accruate positioning for different models of devices-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
