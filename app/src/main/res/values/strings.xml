@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <string name="app_name">ShoeStore</string>
+    <string name="app_name">The Shoe Store</string>
 
     <!--    Login Screen-->
     <string name="title">The Shoe Store</string>
