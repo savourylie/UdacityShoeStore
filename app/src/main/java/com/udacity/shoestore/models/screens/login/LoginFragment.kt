@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -22,6 +23,7 @@ class LoginFragment: Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         Log.i("LoginView", "onCreateView called!")
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
         binding = DataBindingUtil.inflate(
             inflater,

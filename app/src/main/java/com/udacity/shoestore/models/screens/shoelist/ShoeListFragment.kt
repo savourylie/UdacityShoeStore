@@ -2,22 +2,22 @@ package com.udacity.shoestore.models.screens.shoelist
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeItemBinding
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
-import com.udacity.shoestore.models.screens.instruction.InstructionFragmentDirections
 import kotlinx.android.synthetic.main.shoe_item.view.*
 import timber.log.Timber
+
 
 class ShoeListFragment: Fragment() {
 
@@ -29,6 +29,7 @@ class ShoeListFragment: Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         Log.i("ShoeListView", "onCreateView called!")
+        (requireActivity() as AppCompatActivity).supportActionBar?.show()
 
         binding = DataBindingUtil.inflate(
             inflater,
@@ -47,6 +48,7 @@ class ShoeListFragment: Fragment() {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
 
+        setHasOptionsMenu(true)
         showShoes(inflater, container)
 
         shoeListViewModel.logoutFlag.observe(viewLifecycleOwner, Observer { isFinished ->
@@ -58,6 +60,22 @@ class ShoeListFragment: Fragment() {
         })
 
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.shoe_list_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        logout()
+
+        return NavigationUI.onNavDestinationSelected(item!!, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
+    }
+
+    private fun logout() {
+        findNavController().navigate(R.id.action_shoeListFragment_to_loginFragment)
     }
 
     private fun showShoes(inflater: LayoutInflater, container: ViewGroup?) {

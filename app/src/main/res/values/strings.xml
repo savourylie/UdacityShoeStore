@@ -21,4 +21,7 @@
     <!--    Shoe Detail Screen-->
     <string name="add_shoe_button">Yes, add it!</string>
 
+<!--    Logout Menu-->
+    <string name="logout">Logout</string>
+
 </resources>
