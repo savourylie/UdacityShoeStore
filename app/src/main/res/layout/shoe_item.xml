@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="shoeListViewModel"
-            type="com.udacity.shoestore.models.screens.shoelist.ShoeListViewModel" />
+            name="shoeItem"
+            type="String" />
     </data>
 
     <!--    LinearLayout is preferred as the layout of a row element doesn't require the extra complexity -->
@@ -23,7 +23,7 @@
             android:paddingTop="10dp"
             android:paddingEnd="10dp"
             android:paddingBottom="10dp"
-            android:text="ABC"
+            android:text="@={shoeItem}"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp"></TextView>

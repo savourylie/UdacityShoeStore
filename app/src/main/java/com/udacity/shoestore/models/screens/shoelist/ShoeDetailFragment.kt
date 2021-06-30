@@ -19,6 +19,7 @@ import timber.log.Timber
 class ShoeDetailFragment: Fragment() {
     private val shoeListViewModel: ShoeListViewModel by activityViewModels()
     private lateinit var binding: ShoeDetailFragmentBinding
+    
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -47,6 +48,17 @@ class ShoeDetailFragment: Fragment() {
             Toast.makeText(getActivity(), "We have added the shoes to your list!" , Toast.LENGTH_SHORT).show();
             shoeListViewModel.currentShoe.value = ""
         }
+
+//        binding.addShoeButton.setOnClickListener {
+//            var currentShoe: String = binding.editTextEmailLogin.text.toString()
+//            Log.i("ShoeDetailView", "Currenst shoes detail: ${currentShoe}")
+//
+//            shoeListViewModel.shoeList.add(currentShoe)
+//            shoeListViewModel.shoeList.forEach { Log.i("ShoeDetailView", it) }
+////
+//            Toast.makeText(getActivity(), "We have added the shoes to your list!" , Toast.LENGTH_SHORT).show();
+//            shoeListViewModel.currentShoe.value = ""
+//        }
 
         return binding.root
     }

@@ -14,6 +14,10 @@ class ShoeListViewModel: ViewModel() {
     var shoeList = mutableListOf<String>()
     var logoutFlag = MutableLiveData<Boolean>()
 
+    fun createNewShoes(): MutableLiveData<String> {
+        return MutableLiveData<String>()
+    }
+
     fun logout() {
         logoutFlag.value = true
     }

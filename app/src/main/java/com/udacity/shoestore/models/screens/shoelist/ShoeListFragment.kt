@@ -93,7 +93,7 @@ class ShoeListFragment: Fragment() {
                 false
             )
 
-            shoeItemBinding.root.shoe_list_item.text = shoe_detail
+            shoeItemBinding.shoeItem = shoe_detail
             binding.shoeScrollLinearLayout.addView(shoeItemBinding.root)
 //
         }
