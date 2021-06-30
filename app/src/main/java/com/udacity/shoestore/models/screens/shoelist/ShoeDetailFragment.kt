@@ -19,7 +19,7 @@ import timber.log.Timber
 class ShoeDetailFragment: Fragment() {
     private val shoeListViewModel: ShoeListViewModel by activityViewModels()
     private lateinit var binding: ShoeDetailFragmentBinding
-    
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -35,30 +35,18 @@ class ShoeDetailFragment: Fragment() {
         Timber.i("Called ViewModelProvider")
 //        shoeListViewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
 
-        binding.shoeListViewModel = shoeListViewModel
+        binding.currentShoe = shoeListViewModel.currentShoe.value
         binding.setLifecycleOwner(this)
 
         binding.addShoeButton.setOnClickListener {
-            var currentShoe: String = binding.editTextEmailLogin.text.toString()
-            Log.i("ShoeDetailView", "Currenst shoes detail: ${currentShoe}")
+            Log.i("ShoeDetailView", "Currenst shoes detail: ${binding.currentShoe}")
 
-            shoeListViewModel.shoeList.add(currentShoe)
+            shoeListViewModel.shoeList.add(binding.currentShoe ?: "")
             shoeListViewModel.shoeList.forEach { Log.i("ShoeDetailView", it) }
 //
             Toast.makeText(getActivity(), "We have added the shoes to your list!" , Toast.LENGTH_SHORT).show();
-            shoeListViewModel.currentShoe.value = ""
+            binding.currentShoe = ""
         }
-
-//        binding.addShoeButton.setOnClickListener {
-//            var currentShoe: String = binding.editTextEmailLogin.text.toString()
-//            Log.i("ShoeDetailView", "Currenst shoes detail: ${currentShoe}")
-//
-//            shoeListViewModel.shoeList.add(currentShoe)
-//            shoeListViewModel.shoeList.forEach { Log.i("ShoeDetailView", it) }
-////
-//            Toast.makeText(getActivity(), "We have added the shoes to your list!" , Toast.LENGTH_SHORT).show();
-//            shoeListViewModel.currentShoe.value = ""
-//        }
 
         return binding.root
     }

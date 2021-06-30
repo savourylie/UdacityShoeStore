@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="shoeListViewModel"
-            type="com.udacity.shoestore.models.screens.shoelist.ShoeListViewModel" />
+            name="currentShoe"
+            type="String" />
     </data>
 
     <!--    ConstraintLayout is preferred for more accruate positioning for different models of devices-->
@@ -27,7 +27,7 @@
             android:paddingStart="12dp"
             android:paddingLeft="12dp"
             android:textSize="16sp"
-            android:text="@{shoeListViewModel.currentShoe}"
+            android:text="@={currentShoe}"
             app:layout_constraintBottom_toTopOf="@+id/add_shoe_button"
             tools:layout_editor_absoluteX="0dp" />
 
